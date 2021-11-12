@@ -1,0 +1,38 @@
+[
+    {
+        "id": "F30E430B1B4A416F92F1D4D92310B4A9",
+        "name": "Amazon",
+        "email": "contant@amazon.com",
+        "boxes": "6.8,7.9,3"
+    },
+    {
+        "id": "544E1946D22E42B693C9FDCDFED82D42",
+        "name": "American Express",
+        "email": "contact@american_express.com",
+        "boxes": "3,2.1,5"
+    },
+    {
+        "id": "5AD3183EE79A4C2496AB716F044C454A",
+        "name": "Airbnb",
+        "email": "contact@airbnb.com",
+        "boxes": "6,7.2,1,2,9.7"
+    },
+    {
+        "id": "A41DDDC34FDB4C6EB379CCB3B6E2F59A",
+        "name": "Apple",
+        "email": "contact@apple.com",
+        "boxes": "4,5.2,6,7.8"
+    },
+    {
+        "id": "29D8DA3AEB174984BF6FE95200B006C8",
+        "name": "Microsoft",
+        "email": "contact@microsoft.com",
+        "boxes": "2"
+    },
+    {
+        "id": "AA93DB58866647BC83D6C746F80418B0",
+        "name": "Facebook",
+        "email": "contact@facebook.com",
+        "boxes": ""
+    }
+]

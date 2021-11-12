@@ -1,0 +1,36 @@
+.header_container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+}
+
+.website-logo_wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 300px;
+    height: 100%;
+}
+
+.website-logo_wrapper button {
+    display: none;
+    background-color: transparent;
+    border: none;
+}
+
+@media only screen and (max-width: 500px) {
+    .header_container {
+        flex-direction: column;
+    }
+
+    .website-logo_wrapper {
+        width: 100%;
+        margin-bottom: 70px;
+    }
+
+    .website-logo_wrapper button {
+        display: block;
+    }
+}

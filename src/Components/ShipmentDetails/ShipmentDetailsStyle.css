@@ -1,0 +1,89 @@
+.shipment-details_container {
+    background: linear-gradient(124.01deg, #2D3038 0%, rgba(45, 48, 56, 0) 100%);
+    border-radius: 30px;
+    padding: 30px 50px;
+    width: calc(100vw - 500px);
+    height: calc(100vh - 240px);
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+.company-name {
+    font-size: 4rem;
+    font-family: "Roboto Regular";
+    color: #fff;
+}
+
+.company-email {
+    font-size: 1rem;
+    color: #979797;
+    margin-bottom: 30px;
+    font-family: "Roboto Regular";
+}
+
+.cargo-box_label {
+    font-size: 1rem;
+    color: #979797;
+    font-family: "Roboto Regular";
+    margin-bottom: 5px;
+}
+
+.cargo-box {
+    padding: 20px 10px;
+    width: 300px;
+    height: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+}
+
+.num-required-cargo_label {
+    font-size: 2rem;
+    font-family: "Roboto Regular";
+    color: #979797;
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+
+.required-cargo-bays {
+    color: #fff;
+    font-size: 4rem;
+}
+
+@media only screen and (max-width: 500px) {
+    
+    .shipment-details_container {
+        width: calc(100vw - 40px);
+        margin-left: 0px;
+        margin-top: 20px;
+        padding: 20px;
+    }
+
+    .company-name {
+        font-size: 2rem;
+    }
+
+    .company-email  {
+        font-size: 1rem;
+    }
+
+    .cargo-box {
+        width: calc(100% - 20px);
+        height: 20px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        padding: 10px;
+    }
+
+    .num-required-cargo_label {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    
+    .required-cargo-bays {
+        font-size: 2rem;
+        margin-top: 20px;
+        text-align: center;
+    }
+}
