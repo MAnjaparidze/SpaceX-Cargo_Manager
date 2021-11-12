@@ -32,7 +32,6 @@ export default function Index() {
   const calcRequiredBays = () => {
     // Getting String Array
 
-    console.log(cargoBoxes, "[CARGO]");
     let cargo = cargoBoxes.split(",");
     // Creating Number Array and Reverse Sorting It
     let cargoINT = cargo
@@ -92,6 +91,10 @@ export default function Index() {
       }
     }
   };
+
+  const demoCountCargoBat = (array) => {
+    // for
+  } 
 
   const handleCargoChange = (e) => {
     const { value } = e.target;

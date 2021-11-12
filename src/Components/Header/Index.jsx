@@ -8,7 +8,7 @@ import SearchInput from "../SearchInput/Index";
 
 import "./HeaderStyle.css";
 
-export default function Index({menuOpen, handleToggleMenu}) {
+export default function Index({menuOpen, handleToggleMenu, filterShipments}) {
   return (
     <div className="header_container">
       <div className="website-logo_wrapper">
@@ -17,7 +17,7 @@ export default function Index({menuOpen, handleToggleMenu}) {
           <img src={menuOpen ? CloseIcon : MenuIcon} alt="" />
         </button>
       </div>
-      <SearchInput menuOpen={menuOpen} />
+      <SearchInput menuOpen={menuOpen} filterShipments={filterShipments} />
     </div>
   );
 }

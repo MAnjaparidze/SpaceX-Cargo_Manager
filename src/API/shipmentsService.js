@@ -24,14 +24,18 @@ class ShipmentsSerivce {
       }
 
       let shipment = shipmentsData.find((item) => item.id === shipmentID);
-      resolve({status: 200, data: shipment, message: "Got Shipment Successfully"})
+      resolve({
+        status: 200,
+        data: shipment,
+        message: "Got Shipment Successfully",
+      });
     });
   };
 
   filterShipments = (shipmentName) => {
     return new Promise((resolve, reject) => {
-      let filteredShipments = shipmentsData.filter(
-        (item) => item.name.toLowerCase() === shipmentName.toLowerCase()
+      let filteredShipments = shipmentsData.filter((item) =>
+        item.name.toLowerCase().includes(shipmentName.toLowerCase())
       );
       resolve({ status: 200, data: filteredShipments });
     });

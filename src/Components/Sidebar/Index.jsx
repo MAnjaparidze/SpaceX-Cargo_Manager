@@ -2,13 +2,10 @@ import React, { useState } from "react";
 
 import SidebarItem from "./SidebarItem/Index";
 
-import useShipments from "../../Helpers/useShipments";
-
 import "./SidebarStyle.css";
 
-export default function Index({ menuOpen, handleToggleMenu }) {
+export default function Index({ menuOpen, handleToggleMenu, shipments }) {
   const [activeTab, setActiveTab] = useState("");
-  const { shipments } = useShipments();
 
   const handleItemClick = (shipmentID) => {
     setActiveTab(shipmentID);
