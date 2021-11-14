@@ -46,26 +46,38 @@ export default function Index({ handleGetShipment, shipment }) {
         return a - b;
       })
       .reverse();
-    let result = demoCountCargoBay(cargoINT);
+    let result = countCargoBay(cargoINT);
     setRequiredBays(result);
   };
 
-  const demoCountCargoBay = (array) => {
+  const countCargoBay = (array) => {
     let cargoBayCount = 0;
-    let cargoSum = 0;
-
-    for (let item in array) {
-      if (cargoSum + array[item] > 10) {
-        cargoBayCount++;
-        cargoSum = 0;
+    let spreadArr = [...array];
+  
+    while (spreadArr.length > 0) {
+      let sum = spreadArr.shift();
+      let nextIndex = 0;
+  
+      for (nextIndex; nextIndex < spreadArr.length; nextIndex++) {
+        let item = spreadArr[nextIndex];
+        if (sum + item > 10) {
+          continue;
+        }
+  
+        if (sum + item === 10) {
+          break;
+        }
+  
+        if (sum + item < 10) {
+          sum = sum + item;
+          let numIndex = spreadArr.indexOf(item);
+          spreadArr.splice(numIndex, 1);
+          nextIndex--;
+          continue;
+        }
       }
-      cargoSum += array[item];
-      if (item == array.length - 1 && cargoSum > 0) {
-        cargoBayCount++;
-        break;
-      }
+      cargoBayCount++;
     }
-
     return cargoBayCount;
   };
 
@@ -74,7 +86,12 @@ export default function Index({ handleGetShipment, shipment }) {
     const lastChar = value[value.length - 1];
     let lastCharFloat = parseFloat(value[value.length - 1]);
     // Validation for lastCharacter to Be a Number otherwise Calc Function will not fire
-    if (!isNaN(lastCharFloat) || lastChar === "," || lastChar === "." || value === "") {
+    if (
+      !isNaN(lastCharFloat) ||
+      lastChar === "," ||
+      lastChar === "." ||
+      value === ""
+    ) {
       setCargoBoxes(value);
     }
   };
