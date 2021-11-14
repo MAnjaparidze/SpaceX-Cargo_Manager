@@ -1,3 +1,12 @@
+# Main Idea of the Project
+
+The main motive of the project is to create application which will manage the cargo shipments and their count.
+
+# Important to Note
+
+In the project I have added simulation of the realworld connection with the Backend and created Dummy "Error-Management" functionality
+The main idea is to throw an Error when the data is requested just to mimic real problems which might arise while using the application with real 'Backend'
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
