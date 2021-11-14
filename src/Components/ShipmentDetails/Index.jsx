@@ -5,7 +5,7 @@ import useShipments from "../../Helpers/useShipments";
 
 import "./ShipmentDetailsStyle.css";
 
-export default function Index({handleGetShipment, shipment}) {
+export default function Index({ handleGetShipment, shipment }) {
   const [requiredBays, setRequiredBays] = useState(0);
   const [cargoBoxes, setCargoBoxes] = useState("");
   const { shipmentID } = useParams();
@@ -36,64 +36,37 @@ export default function Index({handleGetShipment, shipment}) {
     let cargoINT = cargo
       .map((item) => {
         let num = parseFloat(item);
+        if (!isNaN(num)) {
+          return num;
+        } else {
+          return 0;
+        }
       })
       .sort(function (a, b) {
         return a - b;
       })
       .reverse();
-    let cargoBay = 0;
-    while (cargoINT.length > 0) {
-      let result = countCargoBay(cargoINT);
-      cargoBay += result;
-    }
-    setRequiredBays(cargoBay);
-  };
-
-  const countCargoBay = (array) => {
-    if (array.length === 0) {
-      return 0;
-    }
-    if (array.length === 1) {
-      array.pop();
-      return 1;
-    }
-    for (let a = 0; a < array.length; a++) {
-      for (let b = array.length - 1; b > 0; b--) {
-        let sum = array[a] + array[b];
-        if (sum === 10) {
-          array.pop();
-          array.shift();
-          return 1;
-        }
-        if (sum > 10) {
-          array.shift();
-          return 1;
-        }
-
-        let c = b - 1;
-        while (c !== a) {
-          let additionalSum = sum + array[c];
-          if (additionalSum === 10) {
-            array.splice(c, 1);
-            array.pop();
-            array.shift();
-            return 1;
-          }
-          if (additionalSum < 10) {
-            sum = additionalSum;
-          } else {
-            array.pop();
-            array.shift();
-            return 1;
-          }
-          c--;
-        }
-      }
-    }
+    let result = demoCountCargoBay(cargoINT);
+    setRequiredBays(result);
   };
 
   const demoCountCargoBay = (array) => {
-    // for
+    let cargoBayCount = 0;
+    let cargoSum = 0;
+
+    for (let item in array) {
+      if (cargoSum + array[item] > 10) {
+        cargoBayCount++;
+        cargoSum = 0;
+      }
+      cargoSum += array[item];
+      if (item == array.length - 1 && cargoSum > 0) {
+        cargoBayCount++;
+        break;
+      }
+    }
+
+    return cargoBayCount;
   };
 
   const handleCargoChange = (e) => {
