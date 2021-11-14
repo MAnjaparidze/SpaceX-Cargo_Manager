@@ -5,7 +5,7 @@ The main motive of the project is to create application which will manage the ca
 # Important to Note
 
 In the project I have added simulation of the realworld connection with the Backend and created Dummy "Error-Management" functionality
-The main idea is to throw and Error when the data is requested just to mimic real problems which might arise while using the application with real 'Backend'
+The main idea is to throw an Error when the data is requested just to mimic real problems which might arise while using the application with real 'Backend'
 
 # Getting Started with Create React App
 
