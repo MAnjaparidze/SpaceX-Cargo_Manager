@@ -1,8 +1,8 @@
-#Main Idea of the Project
+# Main Idea of the Project
 
 The main motive of the project is to create application which will manage the cargo shipments and their count.
 
-#Important to Note
+# Important to Note
 
 In the project I have added simulation of the realworld connection with the Backend and created Dummy "Error-Management" functionality
 The main idea is to throw and Error when the data is requested just to mimic real problems which might arise while using the application with real 'Backend'
