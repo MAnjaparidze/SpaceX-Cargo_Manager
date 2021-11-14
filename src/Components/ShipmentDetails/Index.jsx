@@ -25,7 +25,7 @@ export default function Index() {
     if (cargoBoxes) {
       calcRequiredBays();
     } else {
-        setRequiredBays(0)
+      setRequiredBays(0);
     }
   }, [cargoBoxes]);
 
@@ -33,14 +33,17 @@ export default function Index() {
     // Getting String Array
 
     let cargo = cargoBoxes.split(",");
+    console.log(cargo, "SPLIT");
     // Creating Number Array and Reverse Sorting It
     let cargoINT = cargo
-      .map((item) => parseFloat(item))
+      .map((item) => {
+        let num = parseFloat(item);
+        console.log(isNaN(num), num);
+      })
       .sort(function (a, b) {
         return a - b;
       })
       .reverse();
-
     let cargoBay = 0;
     while (cargoINT.length > 0) {
       let result = countCargoBay(cargoINT);
@@ -94,7 +97,7 @@ export default function Index() {
 
   const demoCountCargoBat = (array) => {
     // for
-  } 
+  };
 
   const handleCargoChange = (e) => {
     const { value } = e.target;
