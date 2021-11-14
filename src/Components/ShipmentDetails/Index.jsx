@@ -74,7 +74,7 @@ export default function Index({ handleGetShipment, shipment }) {
     const lastChar = value[value.length - 1];
     let lastCharFloat = parseFloat(value[value.length - 1]);
     // Validation for lastCharacter to Be a Number otherwise Calc Function will not fire
-    if (!isNaN(lastCharFloat) || lastChar === "," || lastChar === ".") {
+    if (!isNaN(lastCharFloat) || lastChar === "," || lastChar === "." || value === "") {
       setCargoBoxes(value);
     }
   };
