@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./Components/Header/Index";
 import Sidebar from "./Components/Sidebar/Index";
 import ShipmentDetails from "./Components/ShipmentDetails/Index";
+import Alert from "./Components/Alert/Index";
 import loader from "./Components/Loader/index";
 
 import useMenu from "./Helpers/useMenu";
@@ -13,7 +14,7 @@ import "./App.css";
 
 function App() {
   const { menuOpen, handleToggleMenu } = useMenu();
-  const { shipments, filterShipments } = useShipments();
+  const { shipments, filterShipments, handleGetShipment, shipment, message} = useShipments();
 
   return (
     <Router>
@@ -26,9 +27,10 @@ function App() {
         <div className="main-container">
           <Sidebar menuOpen={menuOpen} handleToggleMenu={handleToggleMenu} shipments={shipments} />
           <Routes>
-            <Route path="/shipment/:shipmentID" element={<ShipmentDetails />} />
+            <Route path="/shipment/:shipmentID" element={<ShipmentDetails handleGetShipment={handleGetShipment} shipment={shipment} />} />
           </Routes>
         </div>
+        <Alert message={message} />
       </div>
     </Router>
   );

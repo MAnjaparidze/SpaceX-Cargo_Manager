@@ -5,10 +5,9 @@ import useShipments from "../../Helpers/useShipments";
 
 import "./ShipmentDetailsStyle.css";
 
-export default function Index() {
+export default function Index({handleGetShipment, shipment}) {
   const [requiredBays, setRequiredBays] = useState(0);
   const [cargoBoxes, setCargoBoxes] = useState("");
-  const { handleGetShipment, shipment } = useShipments();
   const { shipmentID } = useParams();
 
   useEffect(() => {
@@ -33,12 +32,10 @@ export default function Index() {
     // Getting String Array
 
     let cargo = cargoBoxes.split(",");
-    console.log(cargo, "SPLIT");
     // Creating Number Array and Reverse Sorting It
     let cargoINT = cargo
       .map((item) => {
         let num = parseFloat(item);
-        console.log(isNaN(num), num);
       })
       .sort(function (a, b) {
         return a - b;
@@ -95,7 +92,7 @@ export default function Index() {
     }
   };
 
-  const demoCountCargoBat = (array) => {
+  const demoCountCargoBay = (array) => {
     // for
   };
 
